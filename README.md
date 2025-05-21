@@ -232,6 +232,25 @@ Approve or reject a request.
 - **Tools:** dotenv, nodemon
 
 ---
+## 🔁 Working Flow
+
+- User register by navigate to signup page username staring with "admin" will have admin access manager and employee can be selected during registeration
+- Registered users can login using their credentials 
+- User will be navigated to respective dashboard based on their roles respectively
+- **Employee Dashboard**
+  - Employee can view list of softwares avilable based on requirement they can raise request by clicking "Request Acess".
+  - If they wish to see previously raised requests and their status they can naviagate by clicking "My Requests".
+  - Employee can "logout" by using logout button in navbar.
+- **Manager Dashboard**
+  - Manager Dashboard has list of requests made by the employee and previous requests and their status.
+  - Manager can approve or reject the request based on the reason provided.
+  - Manager can "logout" by using logout button in navbar.
+- **Admin Dashboard**
+  - Admin Dashboard has list of softwares created .
+  - Admin can create, edit or delete softwares based on the need.
+  - Manager can "logout" by using logout button in navbar.
+
+---
 
 ## 📄 License
 
