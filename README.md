@@ -252,12 +252,6 @@ Approve or reject a request.
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
 ## 📬 Contact
 
 For questions or support, please contact [abishekkrishnat@gmail.com](mailto:abishekkrishnat@gmail.com)
