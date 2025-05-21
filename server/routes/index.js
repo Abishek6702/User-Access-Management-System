@@ -31,7 +31,7 @@ router.delete(
   softwareController.deleteSoftware
 );
 
- // to post requests, chnage status, get all request, and particular users requests
+ // to post requests, chnage status, get all request, and particular users
 router.post("/requests", verifyToken, requestController.submitRequest);
 
 
