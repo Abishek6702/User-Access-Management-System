@@ -7,13 +7,13 @@ A full-stack application to manage software access within an organization using 
 
 ## 🚀 Setup Instructions
 
-### 📦 Backend (Node.js + Express + TypeORM)
+### 📦 Backend (Node.js + Express + TypeORM + PostgreSQL)
 
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/user-access-system.git
-cd user-access-system/backend
+git clone https://github.com/Abishek6702/User-Access-Management-System
+cd user-access-system/server
 ```
 
 2. **Install dependencies**
@@ -24,10 +24,10 @@ npm install
 
 3. **Configure environment variables**
 
-Create a `.env` file in the `backend` folder:
+Create a `.env` file in the `server` folder:
 
 ```bash
-cp .env.example .env
+.env
 ```
 
 Fill in the required variables:
@@ -53,10 +53,10 @@ npm run typeorm migration:run
 5. **Start the server**
 
 ```bash
-npm run dev
+nodemon server.js
 ```
 
-> API is now running at `http://localhost:5000/api`
+> Server is now running at `http://localhost:3000/`
 
 ---
 
@@ -65,7 +65,7 @@ npm run dev
 1. **Navigate to frontend directory**
 
 ```bash
-cd ../frontend
+cd ../client
 ```
 
 2. **Install dependencies**
@@ -77,10 +77,10 @@ npm install
 3. **Start the React app**
 
 ```bash
-npm start
+npm run dev
 ```
 
-> React app will run at `http://localhost:3000`
+> React app will run at `http://localhost:5173`
 
 ---
 
@@ -93,6 +93,7 @@ npm start
 #### `POST /api/auth/signup`
 
 Register a new user (default role: Employee).
+Username starting with keyword "admin" will be granted admin access (defined at backend)
 
 **Request Body:**
 ```json
@@ -105,7 +106,7 @@ Register a new user (default role: Employee).
 
 #### `POST /api/auth/login`
 
-Login and receive JWT token.
+Login and receive JWT token, role.
 
 **Request Body:**
 ```json
@@ -231,6 +232,25 @@ Approve or reject a request.
 - **Tools:** dotenv, nodemon
 
 ---
+## 🔁 Working Flow
+
+- User register by navigate to signup page username staring with "admin" will have admin access manager and employee can be selected during registeration
+- Registered users can login using their credentials 
+- User will be navigated to respective dashboard based on their roles respectively
+- **Employee Dashboard**
+  - Employee can view list of softwares avilable based on requirement they can raise request by clicking "Request Acess".
+  - If they wish to see previously raised requests and their status they can naviagate by clicking "My Requests".
+  - Employee can "logout" by using logout button in navbar.
+- **Manager Dashboard**
+  - Manager Dashboard has list of requests made by the employee and previous requests and their status.
+  - Manager can approve or reject the request based on the reason provided.
+  - Manager can "logout" by using logout button in navbar.
+- **Admin Dashboard**
+  - Admin Dashboard has list of softwares created .
+  - Admin can create, edit or delete softwares based on the need.
+  - Manager can "logout" by using logout button in navbar.
+
+---
 
 ## 📄 License
 
@@ -240,4 +260,4 @@ This project is licensed under the MIT License.
 
 ## 📬 Contact
 
-For questions or support, please contact [yourname@example.com](mailto:yourname@example.com)
+For questions or support, please contact [abishekkrishnat@gmail.com](mailto:abishekkrishnat@gmail.com)
