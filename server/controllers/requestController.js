@@ -13,7 +13,6 @@ exports.submitRequest = async (req, res) => {
     const software = await softwareRepo.findOneBy({ id: softwareId });
     if (!software) return res.status(404).json({ msg: "Software not found" });
 
-    // Defensive: ensure accessLevels is an array
     let accessLevels = software.accessLevels;
     if (typeof accessLevels === "string") {
       accessLevels = accessLevels.split(",").map(s => s.trim());
@@ -44,7 +43,7 @@ exports.submitRequest = async (req, res) => {
 exports.manageRequest = async (req, res) => {
   try {
     const id = parseInt(req.params.id);
-    const { status } = req.body; // "Approved" or "Rejected"
+    const { status } = req.body; 
     const request = await requestRepo.findOne({
       where: { id },
       relations: ["user", "software"]
@@ -78,7 +77,7 @@ exports.getAllRequests = async (req, res) => {
   try {
     const requests = await requestRepo.find({
       relations: ["user", "software"],
-      order: { id: "DESC" } // optional: newest first
+      order: { id: "DESC" } 
     });
     res.json(requests);
   } catch (err) {
