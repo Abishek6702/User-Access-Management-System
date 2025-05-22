@@ -250,14 +250,3 @@ Approve or reject a request.
   - Admin can create, edit or delete softwares based on the need.
   - Manager can "logout" by using logout button in navbar.
 
----
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
----
-
-## 📬 Contact
-
-For questions or support, please contact [abishekkrishnat@gmail.com](mailto:abishekkrishnat@gmail.com)
